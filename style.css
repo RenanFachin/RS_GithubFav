@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+    --bg-color: #000000;
+    --ff-page: 'Roboto', sans-serif;
+    --ff-noFavorites: 'Roboto Mono', monospace;
+
+
+    --fontColor-input: #7C7C8A;
+    --fontColor-button: #FFFFFF;
+    --fontColor-buttonHover: #065E7C;
+    --fontColor-table: #E1E1E6;
+    --fontColor-tableAction: #F75A68;
+    --fontColor-noFavorites: #4E5455;
+
+    --bg-input: #06181C;
+    --bg-tableTittle: #043444;
+    --bg-tableOdd: rgba(6,22,27,0.5);
+    --bg-tableEven: #06181C;
+    --bg-button: #065E7C;
+    --bg-buttonHover: #FFFFFF;
+}
+
+.sr-only{
+    /* Screen Reader Only */
+    /* Texto existe mas não existe ao mesmo tempo */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden; /* Não permite o "transbordamento" da box*/
+    clip: rect(0,0,0,0); /* Cria um retângulo quase que inexistente*/
+    white-space: nowrap; /* Não permite a "quebra de linha", força uma linha só*/
+    border-width: 0; /* Apenas para garantir que a borda não exista */
+}
+
+body{
+    background-color: var(--bg-color);
+    font-size: 1.6rem;
+}
+
+#page{
+    max-width: 1120px;
+    margin: 0 auto;
+
+    /* Padding para deixar uma margem dos objetos com a página */
+    padding: 2rem;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 4.8rem;
+    margin-top: 11.5rem;
+    margin-bottom: 9rem;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search input{
+    height: 4.8rem;
+    width: 46.2rem;
+    font-size: 1.6rem;
+    padding: 1.6rem;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--bg-input);
+    color: var(--fontColor-input);
+    font-family: var(--ff-page);
+}
+
+.search button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17rem;
+    height: 4.8rem;
+    border-radius: 5px;
+    background-color: var(--bg-button);
+
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    font-family: var(--ff-page);
+    color: var(--fontColor-button);
+    cursor: pointer;
+}
+
+.search button p{
+    margin-left: 8px;
+}
+
+.search button:hover{
+    color: var(--fontColor-buttonHover);
+    background-color: var(--bg-buttonHover);
+}
+
+.search button:hover svg path{
+    fill: var(--fontColor-buttonHover);
+}
+
+
+/* TABELA */
+table{
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 1rem 2rem -1rem rgba(0,0,0,0.3);
+    font-family: var(--ff-page);
+}
+
+table *{
+    /* "Pega todos elementos dentro da tabela" e faça com que:*/
+    font-size: 2rem;
+    color: var(--fontColor-table);
+}
+
+
+/*Cabeçalho da tabela*/
+table th{
+    background-color: var(--bg-tableTittle);
+    text-align: left;
+    padding: 1.6rem 0 1.6rem 4rem;
+    line-height: 160%;
+    font-weight: 700;
+}
+
+table th:first-child{
+    border-top-left-radius: 12px;
+}
+
+table th:last-child{
+    border-top-right-radius: 12px;
+}
+
+table tr:nth-child(odd){
+    background-color: var(--bg-tableOdd);
+}
+
+table tr:nth-child(even){
+    background-color: var(--bg-tableEven);
+}
+
+table td{
+    text-align: left;
+    padding: 2.4rem 0 2.4rem 4rem;
+    font-weight: 700;
+    line-height: 3.2rem;
+}
+
+table td.user{
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    color: var(--fontColor-table); 
+}
+
+table td.user a{
+    text-decoration: none;
+}
+
+table td.user span{
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+td.user img{
+    width: 5.6rem;
+    height: 5.6rem;
+    object-fit: cover;
+    border-radius: 50%; /* deixa redondo*/
+}
+
+td button.remove{
+    cursor: pointer;
+    color: var(--fontColor-tableAction);
+    background: none;
+    border: none;
+}
+
+.noFavorites{
+    display: flex;
+    align-items: center;
+}
+
+.noFavorites svg{
+    margin: 21rem 6rem 28.9rem 19.2rem;
+}
+
+.noFavorites p{
+    font-family: var(--ff-noFavorites);
+    font-size: 4rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    color: var(--fontColor-noFavorites);
+}
+
+.hide{
+    display: none
+}
+
+#scroll{
+    height: 65rem;
+    overflow: auto;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #4A808C;
+    border-radius: 10px;
+}
