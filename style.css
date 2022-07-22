@@ -193,6 +193,7 @@ td button.remove{
 .noFavorites{
     display: flex;
     align-items: center;
+    background-color: #030B0D;
 }
 
 .noFavorites svg{
@@ -201,18 +202,15 @@ td button.remove{
 
 .noFavorites p{
     font-family: var(--ff-noFavorites);
-    font-size: 4rem;
+    font-size: 3.3rem;
     line-height: 2.5rem;
     font-weight: 700;
     color: var(--fontColor-noFavorites);
-}
 
-.hide{
-    display: none
 }
 
 #scroll{
-    height: 65rem;
+    height: 70rem;
     overflow: auto;
 }
 
